@@ -1,0 +1,38 @@
+name: ZON image scanning action
+description: A composite action to scan images with Sysdig
+
+inputs:
+  gha_vault_role:
+    description: The gha_vault_role as output by the baseproject action
+    required: true
+  image_tag:
+    description: The name and tag of the image to be scanned
+    required: true
+  stop_on_failed_policy_eval:
+    description: Whether to fail the action when the policy evaluation fails
+    default: 'true'
+
+runs:
+  using: "composite"
+  steps:
+    # This is covered by the default GHA Vault policy,
+    # no extra setup required
+    - name: Retrieve Sysdig secure token
+      uses: hashicorp/vault-action@d1720f055e0635fd932a1d2a48f87a666a57906c # v3.0.0
+      with:
+        method: jwt
+        url: https://vault.ops.zeit.de
+        path: github-actions
+        role: ${{ inputs.gha_vault_role }}
+        secrets: |
+          zon/v1/sysdig/sysdig-scanner api-key | SYSDIG_SECURE_TOKEN ;
+
+    # The results from this scan will appear in the GHA actions summary
+    # as well as the Sysdig UI under Vulnerabilities/Pipeline
+    - name: Scan image
+      uses: sysdiglabs/scan-action@v5
+      with:
+        image-tag: ${{ inputs.tag }}
+        stop-on-failed-policy-eval: ${{ inputs.stop_on_failed_policy_eval }}
+        sysdig-secure-token: ${{ env.SYSDIG_SECURE_TOKEN }}
+        sysdig-secure-url: https://eu1.app.sysdig.com/secure
