@@ -16,6 +16,8 @@ The action assumes a locally built image that is subsequently scanned.
 
 ## Example Usage
 
+Scan image for vulnerabilities:
+
 ```yaml
 jobs:
     build:
@@ -30,6 +32,24 @@ jobs:
             # ...
 ```
 
+Perform IaC scan:
+
+```yaml
+jobs:
+    build:
+        # ...
+        steps:
+            # ...
+            - name: Scan k8s manifests
+              uses: ZeitOnline/sysdig-scan-action@v1.0.1
+              with:
+                gha_vault_role: ${{ steps.baseproject.outputs.gha_vault_role }}
+                mode: iac
+                iac_scan_path: ./k8s
+                recursive: true
+            # ...
+```
+
 This usage assumes a preceding step with id `baseproject` that outputs the `gha_vault_role`. This is needed to authenticate to Vault
 for fetching the Sysdig secure token.
 
@@ -37,11 +57,14 @@ for fetching the Sysdig secure token.
 
 Here are all the inputs available through `with`:
 
-| Input                | Description                                                                       | Default | Required |
-| -------------------- | --------------------------------------------------------------------------------- | ------- | -------- |
-| `gha_default_role`   | The name of the GHA default role as output by the baseproject action              |         | ✔       |
-| `image_tag`          | The name and tag of the Docker image to be scanned. Assumes locally built image   |         | ✔       |
-| `stop_on_failed_policy_eval`          | Whether to fail the action when the policy evaluation fails      | 'true'  |          |
+| Input                        | Description                                                                       | Default | Required |
+| ---------------------------- | --------------------------------------------------------------------------------- | ------- | -------- |
+| `mode`                       | Whether to scan OCI images (`vm`) or IaC files (`iac`)                            | `vm`    | ✔       |
+| `gha_default_role`           | The name of the GHA default role as output by the baseproject action              |         | ✔       |
+| `image_tag`                  | The name and tag of the Docker image to be scanned. Assumes locally built image   |         |          |
+| `stop_on_failed_policy_eval` | Whether to fail the action when the policy evaluation fails                       | 'true'  |          |
+| `iac_scan_path`              | Directory path where IaC files to be scanned reside                               |         |          |
+| `recursive`                  | Whether to scan IaC files recursively                                             |         |          |
 
 ## Releases
 
