@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.0.1...v1.1.0) (2024-09-04)
+
+
+### Features
+
+* add support for iac mode ([65f7f9e](https://github.com/ZeitOnline/sysdig-scan-action/commit/65f7f9e13dddf87c6ebbea9f076d50e3190d5693))
+
 ## [1.0.1](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.0.0...v1.0.1) (2024-09-04)
 
 
