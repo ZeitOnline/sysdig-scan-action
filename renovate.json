@@ -1,0 +1,35 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "dependencyDashboard": true,
+  "schedule": [
+    "every weekend"
+  ],
+  "draftPR": true,
+  "enabledManagers": [
+    "github-actions"
+  ],
+  "packageRules": [
+    {
+      "matchUpdateTypes": [
+        "minor",
+        "patch"
+      ],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "semanticCommitType": "fix",
+      "groupName": "github-actions",
+      "automerge": true
+    },
+    {
+      "description": "Use fix prefix for action.yaml updates, so release-please recognizes them as patch updates",
+      "matchFileNames": [
+        "action.yaml"
+      ],
+      "matchManagers": [
+        "github-actions"
+      ],
+      "commitMessagePrefix": "fix"
+    }
+  ]
+}

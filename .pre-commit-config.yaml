@@ -1,0 +1,7 @@
+repos:
+- repo: https://github.com/compilerla/conventional-pre-commit
+  rev: v2.4.0
+  hooks:
+    - id: conventional-pre-commit
+      stages: [commit-msg]
+      args: [] # optional: list of Conventional Commits types to allow. If not set, standard types are allowed https://github.com/compilerla/conventional-pre-commit/blob/main/conventional_pre_commit/format.py#L4C18-L4C18
