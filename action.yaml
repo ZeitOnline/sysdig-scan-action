@@ -32,7 +32,7 @@ runs:
     - name: Scan image
       uses: sysdiglabs/scan-action@v5
       with:
-        image-tag: ${{ inputs.tag }}
+        image-tag: ${{ inputs.image_tag }}
         stop-on-failed-policy-eval: ${{ inputs.stop_on_failed_policy_eval }}
         sysdig-secure-token: ${{ env.SYSDIG_SECURE_TOKEN }}
         sysdig-secure-url: https://eu1.app.sysdig.com/secure
