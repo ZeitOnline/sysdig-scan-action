@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.2.0](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.1.0...v1.2.0) (2025-09-23)
+
+
+### Features
+
+* update sysdig action to v6 ([a6a9bc7](https://github.com/ZeitOnline/sysdig-scan-action/commit/a6a9bc765c7008bb3b9a8ccb01f57a576ff2c13b))
+* update sysdig action to v6 ([5f7bfa2](https://github.com/ZeitOnline/sysdig-scan-action/commit/5f7bfa220b36ab15d77da5aaccfc46a100b2429f))
+
 ## [1.1.0](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.0.1...v1.1.0) (2024-09-04)
 
 
