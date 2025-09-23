@@ -46,4 +46,3 @@ runs:
         recursive: ${{ inputs.recursive }}
         sysdig-secure-token: ${{ env.SYSDIG_SECURE_TOKEN }}
         sysdig-secure-url: https://eu1.app.sysdig.com/secure
-
