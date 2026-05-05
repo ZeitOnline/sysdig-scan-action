@@ -2,6 +2,9 @@
 
 ## [1.2.1](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.2.0...v1.2.1) (2026-05-05)
 
+### Features
+
+* update sysdig action to v6.3.5 ([f2a58a2](https://github.com/ZeitOnline/sysdig-scan-action/commit/f2a58a25860e384a8ec3d7e7a8a50c9a86bc11d4))
 
 ### Bug Fixes
 
