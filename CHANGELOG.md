@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.2.1](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.2.0...v1.2.1) (2026-05-05)
+
+
+### Bug Fixes
+
+* release please action output name ([784073a](https://github.com/ZeitOnline/sysdig-scan-action/commit/784073a48bdcf0a51edcc54963014d59f4428da9))
+
 ## [1.2.0](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.1.0...v1.2.0) (2025-09-23)
 
 
