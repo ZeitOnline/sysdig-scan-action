@@ -37,7 +37,7 @@ runs:
     # The results from this scan will appear in the GHA actions summary
     # as well as the Sysdig UI under Vulnerabilities/Pipeline
     - name: Scan image
-      uses: sysdiglabs/scan-action@9ccb0a0bac929fa421e0468a5909e3da207a7a5a # v6.3.5
+      uses: sysdiglabs/scan-action@607e6bc13f737906e66e81d98e74a69cf356af08 # v6.3.6
       with:
         mode: ${{ inputs.mode }}
         image-tag: ${{ inputs.image_tag }}
