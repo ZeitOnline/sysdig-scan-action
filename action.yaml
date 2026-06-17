@@ -4,7 +4,7 @@ description: A composite action to scan images with Sysdig
 inputs:
   mode:
     description: Whether to scan OCI images or IaC files
-    default: 'vm'
+    default: "vm"
     required: true
   gha_vault_role:
     description: The gha_vault_role as output by the baseproject action. Required if mode is 'vm'
@@ -13,7 +13,7 @@ inputs:
     description: The name and tag of the image to be scanned. Required if mode is 'vm'
   stop_on_failed_policy_eval:
     description: Whether to fail the action when the policy evaluation fails
-    default: 'true'
+    default: "true"
   iac_scan_path:
     description: Directory path where IaC files to be scanned reside
   recursive:
@@ -46,3 +46,4 @@ runs:
         recursive: ${{ inputs.recursive }}
         sysdig-secure-token: ${{ env.SYSDIG_SECURE_TOKEN }}
         sysdig-secure-url: https://eu1.app.sysdig.com/secure
+        use-policies: sysdig-best-practices
