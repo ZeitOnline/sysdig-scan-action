@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.3.0](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.2.1...v1.3.0) (2026-06-17)
+
+
+### Features
+
+* set used policies explicitly ([63deba1](https://github.com/ZeitOnline/sysdig-scan-action/commit/63deba1071e7d7ead8ca923c4e9d284570a4407b))
+
 ## [1.2.1](https://github.com/ZeitOnline/sysdig-scan-action/compare/v1.2.0...v1.2.1) (2026-05-05)
 
 ### Features
